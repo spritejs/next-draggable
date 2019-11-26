@@ -24,7 +24,7 @@ npm start
 
 ```javascript
 
-  // draggable与droppable方法注册到BaseSprite上
+  // draggable与droppable方法注册到Node上
   import { install } from 'next-draggable'
   install(spritejs);
   …
