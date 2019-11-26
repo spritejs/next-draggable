@@ -26,7 +26,7 @@ npm start
 
   // draggable与droppable方法注册到BaseSprite上
   import { install } from 'sprite-draggable'
-  spritejs.use(install);
+  install(spritejs);
   …
 
   let group = new Group();
