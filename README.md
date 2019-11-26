@@ -10,8 +10,7 @@ npm install
 npm start
 ```
 
-访问 http://localhost:9092 查看具体 demo
-
+通过浏览器访问可以查看具体 demo
 
 ![next-draggable](/next-draggable.png)
 
@@ -162,4 +161,3 @@ npm start
 | dragenter | 一个 draggable 对象在进入一个 droppable 对象上   | draggable 进入 droppable 判断点为 draggable 对象最小矩形的中心 |
 | dragleave | 一个 draggable 对象离开一个 droppable 对象上     |                                                                |
 | drop      | 一个 draggable 对象放在一个 droppable 对象上     |                                                                |
-
