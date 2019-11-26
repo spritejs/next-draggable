@@ -14,10 +14,10 @@ npm start
 
 ![next-draggable](/next-draggable.png)
 
-### 安装 sprite-draggable 依赖
+### 安装 next-draggable 依赖
 
 ```
-  npm install sprite-draggable --save
+  npm install next-draggable --save
 ```
 
 ### 作为 spritejs 插件使用
@@ -25,7 +25,7 @@ npm start
 ```javascript
 
   // draggable与droppable方法注册到BaseSprite上
-  import { install } from 'sprite-draggable'
+  import { install } from 'next-draggable'
   install(spritejs);
   …
 
@@ -90,7 +90,7 @@ npm start
 
 ```javascript
 
-  import { draggable, droppable } from 'sprite-draggable'
+  import { draggable, droppable } from 'next-draggable'
 
   …
 
