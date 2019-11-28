@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'lib'),
-    library: 'spriteDraggable',
+    library: 'nextDraggable',
     libraryTarget: 'umd'
   },
   devtool: 'source-map',
