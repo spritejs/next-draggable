@@ -16,18 +16,22 @@ let spriteGreen = new Sprite()
 let spriteScale = new ResizeBlock({ size: [100, 30], backgroundColor: '#eee', dragRect: [0, 0] })
 
 spriteRed.attr({ size: [100, 30], bgcolor: '#f00', pos: [200, 200] })
-
-spriteGreen.attr({ size: [100, 30], pos: [150, 300], bgcolor: 'rgba(0,255,0,0.2)', zIndex: 1 })
+spriteRed.addEventListener('click', e => {
+  e.stopPropagation()
+  console.log('sprite-click')
+})
+spriteGreen.attr({ size: [100, 30], pos: [150, 300], bgcolor: 'rgba(0,255,0,0.5)', zIndex: 1 })
 
 spriteGreen.addEventListener('dblclick', evt => {
   group.droppable(false)
 })
 let nGroup = new Group()
 nGroup.draggable()
-nGroup.attr({ size: [30, 30], pos: [300, 300], clipOverflow: false, bgcolor: '#0ff' })
+nGroup.attr({ pos: [300, 300], clipOverflow: false, bgcolor: '#0ff' })
 nGroup.append(spriteGreen)
-nGroup.addEventListener('mousedown', function() {
-  console.log('mousedown')
+nGroup.addEventListener('click', function(e) {
+  e.stopPropagation()
+  console.log('aaaa-click')
 })
 layer.append(spriteGreen)
 
@@ -63,7 +67,9 @@ let newGroup = new Group()
 newGroup.append(group)
 layer.append(newGroup)
 layer.append(nGroup)
-
+layer.addEventListener('click', e => {
+  console.log('layer-click')
+})
 layer.addEventListener('dblclick', function() {
   spriteRed.draggable(false)
   spriteGreen.draggable({ dragRect: [200, 240] })

@@ -33,7 +33,7 @@ npm start
   group.draggable();
   // group.draggable(false); group.draggable({destroy,true}) 取消注册drag
 
-  group.dropabble()//注册drop事件
+  group.droppable()//注册drop事件
 
   // group.droppable(false) ;group.droppable({destroy:true}) 取消注册drop
 
@@ -98,9 +98,9 @@ npm start
 
   // draggable(group,false); draggable(group,{destroy,true}) 取消注册drag
 
-  dropabble(group) //注册drop事件
+  droppable(group) //注册drop事件
 
-  // dropabble(group,false) ;dropabble(group,{destroy:true}) 取消注册drop
+  // droppable(group,false) ;droppable(group,{destroy:true}) 取消注册drop
 
   group.on('drag', (evt) => {
     console.log('drag')
