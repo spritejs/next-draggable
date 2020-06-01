@@ -37,23 +37,23 @@ npm start
 
   // group.droppable(false) ;group.droppable({destroy:true}) 取消注册drop
 
-  group.on('drag', (evt) => {
+  group.addEventListener('drag', (evt) => {
     console.log('drag')
   });
 
-  group.on('drop', (evt) => {
+  group.addEventListener('drop', (evt) => {
     console.log('drop')
   });
 
-  group.on('dragenter', (evt) => {
+  group.addEventListener('dragenter', (evt) => {
     console.log('dragenter')
   });
 
-  group.on('dragleave', (evt) => {
+  group.addEventListener('dragleave', (evt) => {
     console.log('dragleave')
   });
 
-  group.on('dragover', (evt) => {
+  group.addEventListener('dragover', (evt) => {
     console.log('dragover')
   });
 
@@ -68,15 +68,15 @@ npm start
   //sprite.draggable({dragRect:[0,0]});
 
   /**拖动过程中，有三个事件 dragstart、drag、dragend**/
-  sprite.on('dragstart',function(event){
+  sprite.addEventListener('dragstart',function(event){
     console.log('dragstart');
   });
 
-  sprite.on('drag',function(event){
+  sprite.addEventListener('drag',function(event){
     console.log('drag');
   });
 
-  sprite.on('dragend',function(event){
+  sprite.addEventListener('dragend',function(event){
     console.log('dragend');
   });
 
@@ -102,23 +102,23 @@ npm start
 
   // droppable(group,false) ;droppable(group,{destroy:true}) 取消注册drop
 
-  group.on('drag', (evt) => {
+  group.addEventListener('drag', (evt) => {
     console.log('drag')
   });
 
-  group.on('drop', (evt) => {
+  group.addEventListener('drop', (evt) => {
     console.log('drop')
   });
 
-  group.on('dragenter', (evt) => {
+  group.addEventListener('dragenter', (evt) => {
     console.log('dragenter')
   });
 
-  group.on('dragleave', (evt) => {
+  group.addEventListener('dragleave', (evt) => {
     console.log('dragleave')
   });
 
-  group.on('dragover', (evt) => {
+  group.addEventListener('dragover', (evt) => {
     console.log('dragover')
   });
 
@@ -132,15 +132,15 @@ npm start
   //draggable(sprite,{dragRect:[0,0]});
 
   /**拖动过程中，有三个事件 dragstart、drag、dragend**/
-  sprite.on('dragstart',function(event){
+  sprite.addEventListener('dragstart',function(event){
     console.log('dragstart');
   });
 
-  sprite.on('drag',function(event){
+  sprite.addEventListener('drag',function(event){
     console.log('drag');
   });
 
-  sprite.on('dragend',function(event){
+  sprite.addEventListener('dragend',function(event){
     console.log('dragend');
   });
 
