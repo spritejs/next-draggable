@@ -1,6 +1,6 @@
 {
   "name": "next-draggable",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "let @spritejs/next can draggable",
   "main": "lib/index.js",
   "browser": "lib/index.js",
@@ -17,14 +17,14 @@
   "author": "yaotaiyang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spritejs/sprite-draggable/issues"
+    "url": "https://github.com/spritejs/next-draggable/issues"
   },
   "devDependencies": {
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0"
   },
-  "homepage": "https://github.com/spritejs/sprite-draggable",
+  "homepage": "https://github.com/spritejs/next-draggable",
   "dependencies": {
     "sprite-math": "^1.0.5"
   }
