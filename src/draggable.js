@@ -41,6 +41,7 @@ export function draggable(sprite, option) {
     $drag._dragStartPoint = [evt.x, evt.y]
     $drag.dispatchEvent('dragstart', transEvent(evt), true, true)
     $drag.setMouseCapture()
+    $drag._isDragging = false
   }
 
   function mouseMove(evt) {
@@ -74,6 +75,7 @@ export function draggable(sprite, option) {
       sprite.attr({ x: tarX, y: tarY })
       $drag.dispatchEvent('drag', transEvent(evt), true, true)
       checkDragmove(evt, sprite)
+      sprite._isDragging = true
     }
   }
 
@@ -82,8 +84,11 @@ export function draggable(sprite, option) {
       $drag.releaseMouseCapture()
       delete $drag.x0_
       delete $drag.y0_
-      $drag.dispatchEvent('dragend', transEvent(evt), true, true)
-      checkDragUp(evt, sprite)
+      if ($drag._isDragging) {
+        $drag.dispatchEvent('dragend', transEvent(evt), true, true)
+        checkDragUp(evt, sprite)
+        delete $drag._isDragging
+      }
     }
     $drag = null
   }

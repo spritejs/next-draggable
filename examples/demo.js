@@ -29,7 +29,7 @@ let nGroup = new Group()
 nGroup.draggable()
 nGroup.attr({ pos: [300, 300], clipOverflow: false, bgcolor: '#0ff' })
 nGroup.append(spriteGreen)
-nGroup.addEventListener('click', function(e) {
+nGroup.addEventListener('click', function (e) {
   e.stopPropagation()
   console.log('aaaa-click')
 })
@@ -51,7 +51,9 @@ group.addEventListener('drop', evt => {
 group.addEventListener('dragenter', evt => {
   console.log('dragenter')
 })
-
+group.addEventListener('dragend', evt => {
+  console.log('dragend')
+})
 group.addEventListener('dragleave', evt => {
   console.log('dragleave')
 })
@@ -70,20 +72,20 @@ layer.append(nGroup)
 layer.addEventListener('click', e => {
   console.log('layer-click')
 })
-layer.addEventListener('dblclick', function() {
+layer.addEventListener('dblclick', function () {
   spriteRed.draggable(false)
   spriteGreen.draggable({ dragRect: [200, 240] })
 })
 
-document.querySelector('#rotate').addEventListener('click', function() {
+document.querySelector('#rotate').addEventListener('click', function () {
   let rotate = group.attr('rotate')
   group.attr({ rotate: rotate + 15 })
 })
-document.querySelector('#large').addEventListener('click', function() {
+document.querySelector('#large').addEventListener('click', function () {
   let scale = group.attr('scale')
   group.attr({ scale: [scale[0] + 0.05, scale[1] + 0.05] })
 })
-document.querySelector('#small').addEventListener('click', function() {
+document.querySelector('#small').addEventListener('click', function () {
   let scale = group.attr('scale')
   group.attr({ scale: [scale[0] - 0.05, scale[1] - 0.05] })
 })
