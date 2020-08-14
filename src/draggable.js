@@ -39,7 +39,7 @@ export function draggable(sprite, option) {
     $drag.x0_ = offsetX
     $drag.y0_ = offsetY
     $drag._dragStartPoint = [evt.x, evt.y]
-    $drag.dispatchEvent('dragstart', transEvent(evt), true, true)
+    $drag.dispatchEvent(transEvent('dragstart', evt))
     $drag.setMouseCapture()
     $drag._isDragging = false
   }
@@ -73,7 +73,7 @@ export function draggable(sprite, option) {
         tarY = Math.min(maxY, tarY)
       }
       sprite.attr({ x: tarX, y: tarY })
-      $drag.dispatchEvent('drag', transEvent(evt), true, true)
+      $drag.dispatchEvent(transEvent('drag', evt))
       checkDragmove(evt, sprite)
       sprite._isDragging = true
     }
@@ -85,7 +85,7 @@ export function draggable(sprite, option) {
       delete $drag.x0_
       delete $drag.y0_
       if ($drag._isDragging) {
-        $drag.dispatchEvent('dragend', transEvent(evt), true, true)
+        $drag.dispatchEvent(transEvent('dragend', evt))
         checkDragUp(evt, sprite)
         delete $drag._isDragging
       }
@@ -113,8 +113,10 @@ export function droppable(sprite, option) {
   return sprite
 }
 
-function transEvent(evt) {
-  return { detail: evt }
+function transEvent(name, evt) {
+  let curEvent = new Event(name)
+  curEvent.detail = evt
+  return curEvent
 }
 
 function checkDragmove(evt, sprite) {
@@ -124,12 +126,12 @@ function checkDragmove(evt, sprite) {
       let collision = rectCollision(sprite, dropSprite)
       if (collision && !dropSprite[_isDragenter]) {
         dropSprite[_isDragenter] = true
-        dropSprite.dispatchEvent('dragenter', transEvent(evt), true, true)
+        dropSprite.dispatchEvent(transEvent('dragenter', evt))
       } else if (!collision && dropSprite[_isDragenter]) {
         delete dropSprite[_isDragenter]
-        dropSprite.dispatchEvent('dragleave', transEvent(evt), true, true)
+        dropSprite.dispatchEvent(transEvent('dragleave', evt))
       } else if (collision && dropSprite[_isDragenter]) {
-        dropSprite.dispatchEvent('dragover', transEvent(evt), true, true)
+        dropSprite.dispatchEvent(transEvent('dragover', evt))
       }
     }
   })
@@ -141,7 +143,7 @@ function checkDragUp(evt, sprite) {
     let collision = rectCollision(sprite, dropSprite)
     if (collision && dropSprite[_isDragenter]) {
       delete dropSprite[_isDragenter]
-      dropSprite.dispatchEvent('drop', transEvent(evt), true, true)
+      dropSprite.dispatchEvent(transEvent('drop', evt))
     }
   })
 }

@@ -41,7 +41,7 @@ group.draggable()
 group.droppable()
 group.append(spriteRed)
 group.addEventListener('drag', evt => {
-  console.log('drag')
+  console.log('drag', evt)
 })
 window.group = group
 group.addEventListener('drop', evt => {
