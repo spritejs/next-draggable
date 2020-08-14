@@ -62,7 +62,7 @@ npm start
   sprite.draggable({dragRect:[0,0,300,300]})
 
   // 取消设置dragRect方法
-  //sprite.draggable({dragRect:[0,0,300,300]})
+  //sprite.draggable({dragRect:[]})
 
   //表示拖动的范围大于坐标[0,0]
   //sprite.draggable({dragRect:[0,0]});
