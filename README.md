@@ -31,7 +31,7 @@ npm start
 
   let group = new Group();
   group.draggable();
-  // group.draggable(false); group.draggable({destroy,true}) 取消注册drag
+  // group.draggable(false); group.draggable({destroy:true}) 取消注册drag
 
   group.droppable()//注册drop事件
 
